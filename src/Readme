@@ -1,0 +1,96 @@
+nov 14, 20:17:
+    Done1: A menu that contains all the agencies was created and a random number generator based on Integer.
+
+    Doubt: Is it possible to create a random String generator?
+
+    ToDo: Try to use the concept of hashmap to associate the name of a person to its account number. Otherwise, use the
+            ArrayList (Deleted idea)
+            
+    Note2 (23:01): Although I used Integer to set the random number generator, what would it happen if I use just an
+            Array of long? It become easier? A person just have three accounts at maximum, so...I think I`d be possible
+    
+    Note3 (23:09): I need to remember about the object Person, `cause *which person* only can have three accounts,
+            but I dunno how many people I`ll have
+
+nov 15, 22:25:
+    Done2: In the program? nothing. About my doubt? nothing. About the notes? I searched and tested, but I realized I have
+            more question. I`ll send an e-mail to the teacher in order to work out my problem. Until now, there isn`t
+            a form to creat a ArrayList of Array without creating any object.
+            
+nov 16, 14:36
+    Note4: In Java, we always can encapsulate a primitive type using capital letter. Exemplar: Long is an object to long like
+    	Integer is an object to int. Instead of using three accounts to each person, I can set just one account to each one.
+    	In that way, I'll be able to creat an unique object with both characteristics.
+
+    Done3: It was added a date to the methods Deposit and withDraw and It was created an ArrayList of Strings to build
+           a balance of an account
+           
+nov 17, 14:02
+    Note5: The question about the ArrayList of Array was solved. Something like that isn`t possible, but an ArrayList
+    	of Arraylist it`s totally possible. (ArrayList<ArrayList<String>>) and to see more, just access the favorites in
+    	the e-mail.
+
+    Done4 (16:58): I realized I can convert a number to a String using String.valueOf, so now I'm able to creat a ArrayList
+        of accounts.
+
+    Note6: I probably won't use ArrayList to save more than an account for each person. I`m thinking to use the own object
+        person to save them. But I dunno how exactly to deal with that.
+
+    Note7 (20:02): I decided to change the way I had created the objects. Person will have an object Address and Account
+        will have an object Person like parameter.
+
+    Done5 (22:20): I changed the program in order to implement the note3, so I had updated the classes Person, Address and
+        Account and the method toString.
+
+    ToDo: implement a transfer option to my system bank  (See Done12)
+
+nov 18, 16:20
+    Done6: I implemented some Getters and Setter in Address/Person Class and made the struct of transfer method.
+
+    Note8: My number account was set to be a String, but I`m thinking to change it to be a long, but first a need to see
+        how the things will work to save an account and in the transfer method. Strings is easier to put an ArrayList,
+        and I dunno how will work to compare two different accounts
+
+    Done7 (19:51): I had changed the way that account_creator was built and I created a new class named InputPersonalData
+        to get all necessary data. Finally, I rebuilt the account_creator in order to receive all data and call the
+        necessary constructors to build the creat an account.
+
+    Note9 (21:16): OH SHIT! My System is working!!! .....with some bugs of course, I need to work out them
+
+    Done8 (21:17): MenuSystemBank was created/ Main has a loop with agency_menu and each case has the SystemBank method.
+
+    ToDo: Implement Bank Statement, a way to save all the accounts once created and a method to compare accounts (See Done10)
+
+nov 19, 11:05
+
+    Done9: I solved the problem of getting a number before an String, I dunno how exactly I worked out that, but it's working
+        I had used the same Scanner in InsideHelpers and added I new char variable to get the character new line (\n) that
+        comes after the number, all this things in InsideHelpers. (char a = input.next().charAt(0);)
+
+    Note10 (12:54): If I wanna creat a login and each agency have your own clients, I will need to creat an object to
+        agency and change the way I built the creator.
+
+    Done10 (13:22): Bank Statement was implemented.
+
+    ToDo: Change the output messages to english language (See Done12)
+
+    Note11 (19:24): There is a bug in Balance option, name isn't be printed.
+
+nov 20, 12:34
+
+    Note12: The way I fixed the problems with getting a String after a int wasn't right, it generated a bug like U can see
+        on in Note11. After some test, I realized that none of the attributes of InputPersonalData were been printed on
+        the screen. We come back to 0. Sad
+
+    Note13 (16:03): If there is a Override toString, always you need to print an object, it'll call the new toString.
+
+    Done11 (16:56): A method to compare accounts was built, but not implemented
+
+    Done12 (20:20): I made a lot of changes in my System. I implemented a method to to search for an account and another
+        ones similar to deposit and withDraw, but specifically to the method transfer that I implemented too. Also, I made
+        some vocabulary changes and in MenuSystemBank I replaced the option Leave to "Back to Agencies", in order to be
+        possible to change the agency. (See Note14 to more details)
+
+    Note14: The idea is build the same system to different agencies, each agency will have the same system, but
+        different databases. For example, if I have an account in Agency 001 with the number 1234, I will be able to have
+        a different account in Agency 002 with the same number (1234). Something like that.
