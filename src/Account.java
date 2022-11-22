@@ -74,11 +74,10 @@ public class Account {
         StringBuilder output = new StringBuilder();
 
         output.append(String.format("    Agency: %s\n", getAgency()));
-        output.append(String.format("    Account: %s\n", getAcNumber()));
+        output.append(String.format("    Account Number: %s\n", getAcNumber()));
         output.append(String.format("    Name: %s\n", accountOwner.getName()));
+        output.append(String.format("    CPF: %s\n", accountOwner.getCPF()));
         output.append(String.format("    Balance: %.2f\n", getBalance()));
-//        output.append(String.format("Teste: %s \n", accountOwner.getCPF()));
-//        output.append(String.format("Teste: %s \n", accountOwner.getAddress1().getCEP()));
         return output.toString();
 
     }
