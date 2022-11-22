@@ -49,7 +49,7 @@ public class MenuSystemBank {
 
                 case 5: //Balance
                     System.out.printf(("Account details: \n"));
-                    System.out.println(account1.toString());
+                    System.out.println(account1.outputBalance());
                     break;
 
                 case 6: //Bank statement

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 public class Account {
-    ArrayList<String> transactions_list = new ArrayList<>();
+    ArrayList<String> statement_list = new ArrayList<>();
     private static final double MIN_VALUE = 1.0;
     private final String AGENCY;
     private final String AC_NUMBER;
@@ -23,7 +23,7 @@ public class Account {
         this.balance -= value;
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Withdraw: R$ %.2f", value);
-        transactions_list.add(transaction);
+        statement_list.add(transaction);
         return true;
     }
 
@@ -34,7 +34,7 @@ public class Account {
         this.balance -= value;
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Withdraw to Transfer: R$ %.2f", value);
-        transactions_list.add(transaction);
+        statement_list.add(transaction);
         return true;
     }
 
@@ -45,7 +45,7 @@ public class Account {
         this.balance += value;
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Deposit: R$ %.2f", value);
-        transactions_list.add(transaction);
+        statement_list.add(transaction);
         return true;
 
     }
@@ -57,7 +57,7 @@ public class Account {
         this.balance += value;
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Deposit from Transfer: R$ %.2f", value);
-        transactions_list.add(transaction);
+        statement_list.add(transaction);
         return true;
 
     }
@@ -69,8 +69,7 @@ public class Account {
         return true;
     }
 
-    @Override
-    public String toString()
+    public String outputBalance()
     {
         StringBuilder output = new StringBuilder();
 
@@ -87,7 +86,7 @@ public class Account {
     public String statement_listAsString (){
         StringBuilder output = new StringBuilder();
 
-        for(String s : transactions_list){
+        for(String s : statement_list){
             output.append(String.format("%s\n", s));
         }
 
@@ -95,15 +94,11 @@ public class Account {
     }
 
 //    public boolean compare_Account(String accountNumber, String password){
-//        for(Account ac : Creat.account_list){
+//        for(Account ac : Auxiliars.account_list){
 //            if(ac.getAcNumber().equals(accountNumber)){
 //                if(ac.getPassword().equals(password)){
 //                    return true;
-//                }else{
-//                    throw new RuntimeException("Invalid Password! Try again.");
-//                }
-//            }else{
-//                throw new RuntimeException("Invalid Account! Try again.");
+//                }return false;     //ToDo throw new RuntimeException("Invalid Password! Try again.");
 //            }
 //        }
 //        return false;
