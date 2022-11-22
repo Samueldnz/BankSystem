@@ -74,7 +74,6 @@ public class Account {
     {
         StringBuilder output = new StringBuilder();
 
-        output.append(String.format("Account details: \n\n"));
         output.append(String.format("    Agency: %s\n", getAgency()));
         output.append(String.format("    Account: %s\n", getAcNumber()));
         output.append(String.format("    Name: %s\n", accountOwner.getName()));

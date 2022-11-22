@@ -48,6 +48,7 @@ public class MenuSystemBank {
                     break;
 
                 case 5: //Balance
+                    System.out.printf(("Account details: \n"));
                     System.out.println(account1.toString());
                     break;
 

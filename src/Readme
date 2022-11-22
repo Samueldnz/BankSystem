@@ -94,3 +94,11 @@ nov 20, 12:34
     Note14: The idea is build the same system to different agencies, each agency will have the same system, but
         different databases. For example, if I have an account in Agency 001 with the number 1234, I will be able to have
         a different account in Agency 002 with the same number (1234). Something like that.
+
+nov 21, 22:44
+
+    //ToDo - Creat a method to extinguish an account
+
+    Doubt: How delete an object?
+
+    //ToDo - Transform agency in an object and do a java doc

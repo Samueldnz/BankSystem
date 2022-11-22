@@ -18,7 +18,6 @@ public class Auxiliars{
     private static String CEP;
     private static String number_account;
     private static double firstValue;
-
     public static Account account_Creator(String agency){
 
         name = InputPersonalData.input_name();
