@@ -1,4 +1,4 @@
-public class Output {
+public abstract class Output {
 
     public static void welcome_message(){
         System.out.println("\nWelcome to Sampaio Brothers Bank! \n");

@@ -1,4 +1,4 @@
-public class Strings_Agency {
+public abstract class Strings_Agency {
 
     public static void agency_001(){
         System.out.printf("   \n1) Agency: 001\n");

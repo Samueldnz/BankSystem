@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class InsideHelpers {
+public abstract class InsideHelpers {
 
     private static Scanner input = new Scanner(System.in);
     public static int get_Int(int min, int max)

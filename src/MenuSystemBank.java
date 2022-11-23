@@ -12,7 +12,7 @@ public class MenuSystemBank {
             switch (Output.menu()) {
                 case 1: //creat an account
                     System.out.println("Enter your personal data: ");
-                    account1 = Auxiliars.account_Creator(agency);
+                    account1 = Auxiliary.account_Creator(agency);
                     System.out.println("Successful account creation!");
                     break;
 
@@ -35,9 +35,9 @@ public class MenuSystemBank {
                         System.out.println("Enter with destiny account number: ");
                         InsideHelpers.get_string();
                         String acNumber = InsideHelpers.get_string();
-                        Account ac1 = Auxiliars.searchAccount(acNumber);
+                        Account ac1 = Auxiliary.searchAccount(acNumber);
 
-                        if (Auxiliars.account_list.contains(ac1)) {
+                        if (Auxiliary.account_list.contains(ac1)) {
                             System.out.println("Enter with an amount to transfer: ");
                             value = InsideHelpers.get_double(MIN_VALUE);
                             Output.transfer_message(account1.transfer(ac1, value));

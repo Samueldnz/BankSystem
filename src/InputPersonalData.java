@@ -1,4 +1,4 @@
-public class InputPersonalData {
+public abstract class InputPersonalData {
     private static String name;
     private static String cpf;
     private static String id;

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Auxiliars{
+public abstract class Auxiliary {
 
     static Random myRMgenerator = new Random();
     public static ArrayList<Account> account_list = new ArrayList<>();

@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Main_Test {
 
 
@@ -26,7 +24,7 @@ public class Main_Test {
 //        Creat.account_CreatorTest(ac2);
 //        Creat.account_CreatorTest(ac3);
 
-        System.out.println(Auxiliars.account_list); //It`s calling toString in Account
+        System.out.println(Auxiliary.account_list); //It`s calling toString in Account
         System.out.println(ac1.outputBalance());
 
         ac1.deposit(200);
