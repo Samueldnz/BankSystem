@@ -50,8 +50,7 @@ public class Auxiliars{
 //        account_list.add(ac1);
 //    }
     private static String generator_accountNumber() { //gerar número de conta aleatório
-        String accountNumber = String.valueOf(myRMgenerator.nextLong(000000, 999999));
-        return accountNumber;
+        return String.valueOf(myRMgenerator.nextLong(000000, 999999));
     }
 
     public static Account searchAccount(String acNumber){
