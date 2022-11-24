@@ -103,3 +103,7 @@ nov 21, 22:44
 
     //ToDo - Transform agency in an object and do a java doc
     //ToDO - Creat a verification in order to know if the Random generates a repetitive number
+
+nov 22, 19:06
+
+    Doubt: Is it worth use protect static instead of using lots of variables?
