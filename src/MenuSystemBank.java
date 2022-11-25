@@ -37,7 +37,7 @@ public class MenuSystemBank {
                         String acNumber = InsideHelpers.get_string();
                         Account ac1 = Auxiliary.searchAccount(acNumber);
 
-                        if (Auxiliary.account_list.contains(ac1)) {
+                        if (ac1 != null) {
                             System.out.println("Enter with an amount to transfer: ");
                             value = InsideHelpers.get_double(MIN_VALUE);
                             Output.transfer_message(account1.transfer(ac1, value));

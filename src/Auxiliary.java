@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public abstract class Auxiliary {
 
     static Random myRMgenerator = new Random();
-    public static ArrayList<Account> account_list = new ArrayList<>();
+    public static HashMap<String, Account> accountByACNumber = new HashMap<>();
     private static String name;
     private static String CPF;
     private static String ID;
@@ -40,7 +41,7 @@ public abstract class Auxiliary {
 
         Account account1 = new Account(agency, number_account, owner, firstValue);
 
-        account_list.add(account1);
+        accountByACNumber.put(number_account, account1);
 
         return account1;
     }
@@ -54,11 +55,6 @@ public abstract class Auxiliary {
     }
 
     public static Account searchAccount(String acNumber){
-        for(Account ac1 : account_list){
-            if(ac1.getAcNumber().equals(acNumber)){
-                return ac1;
-            }
-        }
-        return null;
+        return accountByACNumber.get(acNumber);
     }
 }
