@@ -17,9 +17,9 @@ public class Main_Test {
 
         Account ac2 = new Account("002", "43242", owner, 200);
         Account ac3 = new Account("003", "5442", owner, 200);
-        Auxiliary.account_list.add(ac1);
-        Auxiliary.account_list.add(ac2);
-        Auxiliary.account_list.add(ac3);
+        Auxiliary.accountByACNumber.put("1234",ac1);
+        Auxiliary.accountByACNumber.put("43242",ac2);
+        Auxiliary.accountByACNumber.put("5442",ac3);
 
 
         Account testSearch = Auxiliary.searchAccount("43242");
@@ -31,7 +31,7 @@ public class Main_Test {
 //        Creat.account_CreatorTest(ac2);
 //        Creat.account_CreatorTest(ac3);
 
-        System.out.println(Auxiliary.account_list); //It`s calling toString in Account
+        System.out.println(Auxiliary.accountByACNumber.toString()); //It`s calling toString in Account
         System.out.println(ac1.outputBalance());
 
         ac1.deposit(200);
