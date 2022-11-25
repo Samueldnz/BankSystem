@@ -110,8 +110,10 @@ nov 22, 19:06
 
 nov 24, 22:10
 
-    Done: I used Hashmap instead of using ArrayList to save my account and change the way a execute the MenuSystemBank.
+    Done13: I used Hashmap instead of using ArrayList to save my account and change the way a execute the MenuSystemBank.
         So now, everytime I need to use an option like withdraw or deposit, I will need to enter with my account number,
         ir order to be independent of option Creat Account. This way of building my program is temporary, it'll work until
         I build a login system.
-         
+
+    Done14 (22:56): All the account numbers were put on an Hashset and I built account number verification based on this
+        hashset.
