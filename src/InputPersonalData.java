@@ -65,10 +65,23 @@ public abstract class InputPersonalData {
         return cep;
     }
 
+    public static String input_password(){
+        System.out.println("  Password (6 digits): ");
+        String psswrd = InsideHelpers.get_string();
+
+        while(psswrd.length() != 6){
+            System.out.println("Invalid Password! Try again!");
+            psswrd = InsideHelpers.get_string();
+        }
+        return psswrd;
+
+    }
+
     public static double input_firstValue(){
         System.out.println("Enter your first value to deposit: ");
         double value = InsideHelpers.get_double(1.0);
         return value;
     }
+
 
 }

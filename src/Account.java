@@ -8,10 +8,13 @@ public class Account {
     private Person accountOwner;
     private double balance;
 
-    public Account(String ag, String cc, Person accountOwner, double value){
+    long passwordHash;
+
+    public Account(String ag, String cc, Person accountOwner, String password, double value){
         this.accountOwner = accountOwner;
         this.AGENCY = ag;
         this.AC_NUMBER = cc;
+        this.passwordHash = password.hashCode();
 
         deposit(value);
     }

@@ -9,14 +9,13 @@ public abstract class Auxiliary {
     public static HashMap<String, Account> accountByACNumber = new HashMap<>();
     public static HashSet<String> acNumberHash = new HashSet<>();
 
-    private static String number_account;
-    private static double firstValue;
+
     public static Account account_Creator(String agency){
-        boolean hasAcNumber;
 
         String name = InputPersonalData.input_name();
         String CPF = InputPersonalData.input_cpf();
         String ID = InputPersonalData.input_id();
+        String password = InputPersonalData.input_password();
         String country = InputPersonalData.input_country();
         String state = InputPersonalData.input_state();
         String city = InputPersonalData.input_city();
@@ -26,19 +25,14 @@ public abstract class Auxiliary {
         String complement = InputPersonalData.input_complement();
         String CEP = InputPersonalData.input_cep();
 
-        firstValue = InputPersonalData.input_firstValue();
+        double firstValue = InputPersonalData.input_firstValue();
 
         Address home = new Address(country, state, city, neighborhood, street, number, complement, CEP);
         Person owner = new Person(name, CPF, ID, home);
 
-        do{
-            number_account = generator_accountNumber();
-            hasAcNumber = searchAcNumber(number_account);
-        }while (hasAcNumber);
+        String number_account = generator_accountNumber();
 
-        acNumberHash.add(number_account);
-
-        Account account1 = new Account(agency, number_account, owner, firstValue);
+        Account account1 = new Account(agency, number_account, owner, password, firstValue);
         accountByACNumber.put(number_account, account1);
 
         return account1;
@@ -49,7 +43,17 @@ public abstract class Auxiliary {
     }
 
     private static String generator_accountNumber() { //gerar número de conta aleatório
-        return String.valueOf(myRMgenerator.nextLong(000000, 999999));
+        boolean hasAcNumber;
+        String s;
+
+        do{
+            s = String.valueOf(myRMgenerator.nextLong(000000, 999999));
+            hasAcNumber = searchAcNumber(s);
+        }while(hasAcNumber);
+
+        acNumberHash.add(s);
+
+        return s;
     }
 
     public static Account searchAccount(String acNumber){

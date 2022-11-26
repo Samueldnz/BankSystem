@@ -13,10 +13,10 @@ public class Main_Test {
                 "434", "nenhum", "345232");
 
         Person owner = new Person("Samuel", "163762", "388443", home);
-        Account ac1 = new Account("0001", "1234", owner, 200);
+        Account ac1 = new Account("0001", "1234", owner, "324234", 200);
 
-        Account ac2 = new Account("002", "43242", owner, 200);
-        Account ac3 = new Account("003", "5442", owner, 200);
+        Account ac2 = new Account("002", "43242", owner, "123456",200);
+        Account ac3 = new Account("003", "5442", owner, "123456", 200);
         Auxiliary.accountByACNumber.put("1234",ac1);
         Auxiliary.accountByACNumber.put("43242",ac2);
         Auxiliary.accountByACNumber.put("5442",ac3);
