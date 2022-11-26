@@ -8,33 +8,24 @@ public abstract class Auxiliary {
     static Random myRMgenerator = new Random();
     public static HashMap<String, Account> accountByACNumber = new HashMap<>();
     public static HashSet<String> acNumberHash = new HashSet<>();
-    private static String name;
-    private static String CPF;
-    private static String ID;
-    private static String country;
-    private static String state;
-    private static String city;
-    private static String neighborhood;
-    private static String street;
-    private static String number;
-    private static String complement;
-    private static String CEP;
+
     private static String number_account;
     private static double firstValue;
     public static Account account_Creator(String agency){
         boolean hasAcNumber;
 
-        name = InputPersonalData.input_name();
-        CPF = InputPersonalData.input_cpf();
-        ID = InputPersonalData.input_id();
-        country = InputPersonalData.input_country();
-        state = InputPersonalData.input_state();
-        city = InputPersonalData.input_city();
-        neighborhood = InputPersonalData.input_neighborhood();
-        street = InputPersonalData.input_street();
-        number = InputPersonalData.input_number();
-        complement = InputPersonalData.input_complement();
-        CEP = InputPersonalData.input_cep();
+        String name = InputPersonalData.input_name();
+        String CPF = InputPersonalData.input_cpf();
+        String ID = InputPersonalData.input_id();
+        String country = InputPersonalData.input_country();
+        String state = InputPersonalData.input_state();
+        String city = InputPersonalData.input_city();
+        String neighborhood = InputPersonalData.input_neighborhood();
+        String street = InputPersonalData.input_street();
+        String number = InputPersonalData.input_number();
+        String complement = InputPersonalData.input_complement();
+        String CEP = InputPersonalData.input_cep();
+
         firstValue = InputPersonalData.input_firstValue();
 
         Address home = new Address(country, state, city, neighborhood, street, number, complement, CEP);

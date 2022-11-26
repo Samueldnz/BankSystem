@@ -8,7 +8,7 @@ public abstract class InsideHelpers {
         int i = 0;
 
         while(i < min || i > max){
-            i = input.nextInt();
+            i = Integer.parseInt(input.nextLine());
         }
 
         return i;
@@ -20,7 +20,7 @@ public abstract class InsideHelpers {
 
         while(i < min || i > max)
         {
-            i = input.nextDouble();
+            i = Double.parseDouble(input.nextLine());
         }
         return i;
     }
@@ -30,12 +30,11 @@ public abstract class InsideHelpers {
 
         while(i < min)
         {
-            i = input.nextDouble();
+            i = Double.parseDouble(input.nextLine());
         }
         return i;
     }
     public static String get_string(){
-//        char a = input.next().charAt(0);
         String s = input.nextLine();
         return s;
     }

@@ -60,7 +60,6 @@ public class MenuSystemBank {
 
                         if(acOrigin != null){
                             System.out.println("Enter with destiny account number: ");
-                            InsideHelpers.get_string();
                             acNumber = InsideHelpers.get_string();
                             acDestiny = Auxiliary.searchAccount(acNumber);
 
@@ -68,7 +67,7 @@ public class MenuSystemBank {
                                 System.out.println("Enter with an amount to transfer: ");
                                 value = InsideHelpers.get_double(MIN_VALUE);
                                 Output.transfer_message(acOrigin.transfer(acDestiny, value));
-                                looping = false;
+                                looping = true;
 
                             } else {
                                 System.out.println("This account doesn't exist! Enter with a new account number please!");
