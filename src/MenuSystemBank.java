@@ -9,6 +9,8 @@ public class MenuSystemBank {
             Account ac1 = null;
             String acNumber;
             String password;
+            int loginAttempts = 0;
+            boolean looping = false;
 
 //            Account account1 = null;
             switch (Output.menu()) {
@@ -20,43 +22,51 @@ public class MenuSystemBank {
                     break;
 
                 case 2: //withdraw
-                    System.out.println("Enter with your account number: ");
-                    acNumber = InsideHelpers.get_string();
-                    System.out.println("Enter with your password: ");
-                    password = InsideHelpers.get_string();
 
-                    if(Auxiliary.Login_verification(acNumber, password)){
-                        System.out.println("Successful Login!");
-                        System.out.printf("Enter an amount to withdraw: ");
-                        value = InsideHelpers.get_double(MIN_VALUE, MAX_VALUE);
-                        Output.withDraw_message(Auxiliary.searchAccount(acNumber).withDraw(value));
-                    }else{
-                        System.out.println("Login Failed!"); //ToDo throw an Exception
+                    while(loginAttempts < 3 && !looping) {
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
+
+                        if (Auxiliary.Login_verification(acNumber, password)) {
+                            System.out.println("Successful Login!");
+                            System.out.printf("Enter an amount to withdraw: ");
+                            value = InsideHelpers.get_double(MIN_VALUE, MAX_VALUE);
+                            Output.withDraw_message(Auxiliary.searchAccount(acNumber).withDraw(value));
+                            looping = true;
+                        } else {
+                            System.out.println("Login Failed!"); //ToDo throw an Exception
+                        }
                     }
-
                     break;
 
                 case 3: //deposit
-                    System.out.println("Enter with your account number: ");
-                    acNumber = InsideHelpers.get_string();
-                    System.out.println("Enter with your password: ");
-                    password = InsideHelpers.get_string();
 
-                    if(Auxiliary.Login_verification(acNumber, password)){
-                        System.out.println("Successful Login!");
-                        System.out.printf("Enter an amount to deposit: ");
-                        value = InsideHelpers.get_double(MIN_VALUE, MAX_VALUE);
-                        Output.deposit_message(Auxiliary.searchAccount(acNumber).deposit(value));
-                    }else{
-                        System.out.println("Login Failed!"); //ToDo throw an Exception
+                    while(loginAttempts < 3 && !looping) {
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
+
+                        if (Auxiliary.Login_verification(acNumber, password)) {
+                            System.out.println("Successful Login!");
+                            System.out.printf("Enter an amount to deposit: ");
+                            value = InsideHelpers.get_double(MIN_VALUE, MAX_VALUE);
+                            Output.deposit_message(Auxiliary.searchAccount(acNumber).deposit(value));
+                            looping = true;
+                        } else {
+                            System.out.println("Login Failed!"); //ToDo throw an Exception
+                        }
                     }
                     break;
 
                 case 4: //Transfer
-                    boolean looping = false;
                     Account acDestiny= null;
                     String acNumbDestiny, acNumbOrigin;
-                    int loginAttempts = 0;
+                    loginAttempts = 0;
 
                     while(loginAttempts < 3 && !looping) {
 
@@ -89,34 +99,40 @@ public class MenuSystemBank {
                     break;
 
                 case 5: //Balance
-                    System.out.println("Enter with your account number: ");
-                    acNumber = InsideHelpers.get_string();
-                    System.out.println("Enter with your password: ");
-                    password = InsideHelpers.get_string();
+                    while(loginAttempts < 3 && !looping) {
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
 
-                    if(Auxiliary.Login_verification(acNumber, password)){
-                        System.out.println("Successful Login!");
-                        ac1 = Auxiliary.searchAccount(acNumber);
-                        System.out.printf(("Account details: \n"));
-                        System.out.println(ac1.outputBalance());
-                    }else{
-                        System.out.println("Login Failed!");
+                        if (Auxiliary.Login_verification(acNumber, password)) {
+                            System.out.println("Successful Login!");
+                            ac1 = Auxiliary.searchAccount(acNumber);
+                            System.out.printf(("Account details: \n"));
+                            System.out.println(ac1.outputBalance());
+                            looping = true;
+                        } else {
+                            System.out.println("Login Failed!");
+                        }
                     }
                     break;
 
                 case 6: //Bank statement
-                    System.out.println("Enter with your account number: ");
-                    acNumber = InsideHelpers.get_string();
-                    System.out.println("Enter with your password: ");
-                    password = InsideHelpers.get_string();
+                    while(loginAttempts < 3 && !looping) {
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
 
-                    if(Auxiliary.Login_verification(acNumber, password)){
-                        System.out.println("Successful Login!");
-                        ac1 = Auxiliary.searchAccount(acNumber);
-                        System.out.printf("Bank Statement:\n\n");
-                        System.out.println(ac1.statement_listAsString());
-                    }else{
-                        System.out.println("Login failed!");
+                        if (Auxiliary.Login_verification(acNumber, password)) {
+                            System.out.println("Successful Login!");
+                            ac1 = Auxiliary.searchAccount(acNumber);
+                            System.out.printf("Bank Statement:\n\n");
+                            System.out.println(ac1.statement_listAsString());
+                            looping = true;
+                        } else {
+                            System.out.println("Login failed!");
+                        }
                     }
                     break;
 
