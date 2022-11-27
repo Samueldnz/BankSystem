@@ -74,7 +74,6 @@ public abstract class InputPersonalData {
             psswrd = InsideHelpers.get_string();
         }
         return psswrd;
-
     }
 
     public static double input_firstValue(){

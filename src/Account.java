@@ -126,7 +126,8 @@ public class Account {
         return balance;
     }
 
-
-
+    public long getPasswordHash() {
+        return passwordHash;
+    }
 }
 

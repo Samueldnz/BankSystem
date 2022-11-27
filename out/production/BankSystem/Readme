@@ -102,7 +102,7 @@ nov 21, 22:44
     Doubt: How delete an object?
 
     //ToDo - Transform agency in an object and do a java doc
-    //ToDO - Creat a verification in order to know if the Random generates a repetitive number
+    //ToDO - Creat a verification in order to know if the Random generates a repetitive number (Done14)
 
 nov 22, 19:06
 
@@ -117,3 +117,11 @@ nov 24, 22:10
 
     Done14 (22:56): All the account numbers were put on an Hashset and I built account number verification based on this
         hashset.
+
+nov 25, 12:19
+
+    Done15: All the problems I have been had with the data input was worked out. I changed the way I had built the methods
+        of InsideHelpers in order to get a Line and then convert to primitive variable.
+
+    Done16: Password was added to account just like all the changes necessary to do this.
+

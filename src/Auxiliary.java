@@ -60,5 +60,16 @@ public abstract class Auxiliary {
         return accountByACNumber.get(acNumber);
     }
 
+    public static boolean Login_verification(String AcNumber, String password){
+        Account ac1 = accountByACNumber.get(AcNumber);
+
+        if(ac1 != null){
+            if(ac1.getPasswordHash() == password.hashCode()){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }

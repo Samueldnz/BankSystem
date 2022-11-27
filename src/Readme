@@ -122,3 +122,6 @@ nov 25, 12:19
 
     Done15: All the problems I have been had with the data input was worked out. I changed the way I had built the methods
         of InsideHelpers in order to get a Line and then convert to primitive variable.
+
+    Done16: Password was added to account just like all the changes necessary to do this.
+
