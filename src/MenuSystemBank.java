@@ -66,7 +66,6 @@ public class MenuSystemBank {
                 case 4: //Transfer
                     Account acDestiny= null;
                     String acNumbDestiny, acNumbOrigin;
-                    loginAttempts = 0;
 
                     while(loginAttempts < 3 && !looping) {
 
@@ -102,6 +101,7 @@ public class MenuSystemBank {
                     while(loginAttempts < 3 && !looping) {
                         System.out.println("Enter with your account number: ");
                         acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
                         System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
                         password = InsideHelpers.get_string();
 
@@ -121,6 +121,7 @@ public class MenuSystemBank {
                     while(loginAttempts < 3 && !looping) {
                         System.out.println("Enter with your account number: ");
                         acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
                         System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
                         password = InsideHelpers.get_string();
 
@@ -136,7 +137,34 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 7: //Back to agencies
+                case 7: //remove
+
+                    switch (Output.confirmation()) {
+                        case 1:
+                            while (loginAttempts < 3 && !looping) {
+                                System.out.println("Enter with your account number: ");
+                                acNumber = InsideHelpers.get_string();
+                                loginAttempts++;
+                                System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                                password = InsideHelpers.get_string();
+
+                                if (Auxiliary.Login_verification(acNumber, password)) {
+                                    ac1 = Auxiliary.searchAccount(acNumber);
+                                    Output.remove_message(ac1.remove_Account());
+                                    looping = true;
+                                } else {
+                                    System.out.println("Login Failed!");
+                                }
+                            }
+                            break;
+
+                        case 2:
+                            System.out.println("Action canceled!");
+                            break;
+                    }
+                    break;
+
+                case 8: //Back to agencies
                     return;
             }
         }

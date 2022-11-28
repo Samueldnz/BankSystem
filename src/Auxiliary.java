@@ -10,7 +10,7 @@ public abstract class Auxiliary {
     public static HashSet<String> acNumberHash = new HashSet<>();
 
 
-    public static Account account_Creator(String agency){
+    public static Account account_Creator(String agency) {
 
         String name = InputPersonalData.input_name();
         String CPF = InputPersonalData.input_cpf();
@@ -46,30 +46,22 @@ public abstract class Auxiliary {
         boolean hasAcNumber;
         String s;
 
-        do{
+        do {
             s = String.valueOf(myRMgenerator.nextLong(000000, 999999));
             hasAcNumber = searchAcNumber(s);
-        }while(hasAcNumber);
+        } while (hasAcNumber);
 
         acNumberHash.add(s);
 
         return s;
     }
 
-    public static Account searchAccount(String acNumber){
+    public static Account searchAccount(String acNumber) {
         return accountByACNumber.get(acNumber);
     }
 
-    public static boolean Login_verification(String AcNumber, String password){
+    public static boolean Login_verification(String AcNumber, String password) {
         Account ac1 = accountByACNumber.get(AcNumber);
-
-        if(ac1 != null){
-            if(ac1.getPasswordHash() == password.hashCode()){
-                return true;
-            }
-        }
-        return false;
+        return ac1 != null && ac1.getPasswordHash() == password.hashCode();
     }
-
-
 }

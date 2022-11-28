@@ -72,6 +72,7 @@ public class Account {
         return true;
     }
 
+
     public String outputBalance()
     {
         StringBuilder output = new StringBuilder();
@@ -95,25 +96,25 @@ public class Account {
         return output.toString();
     }
 
-//    public boolean compare_Account(String accountNumber, String password){
-//        for(Account ac : Auxiliars.account_list){
-//            if(ac.getAcNumber().equals(accountNumber)){
-//                if(ac.getPassword().equals(password)){
-//                    return true;
-//                }return false;     //ToDo throw new RuntimeException("Invalid Password! Try again.");
-//            }
-//        }
-//        return false;
-//    }
-//   comparador de conta(conta e senha){
-//        faz (for) uma busca por conta
-//            se  conta for igual
-//                faz uma busca por senha
-//                    se senha for igual
-//                        retorna true, é logado
-//                    else senha invalida retorna false
-//
-//            else conta invalida    retorna false
+    public boolean remove_Account() {
+        if(this.balance == 0){
+            Auxiliary.accountByACNumber.remove(this.AC_NUMBER);
+            return true;
+        }
+        return false;
+    }
+
+//    public int remove_AccountAlternative(){
+//        if(this.balance > 0){
+//            System.out.println("You need to withdraw your money first!");
+//            return 1;
+//        } else if (this.balance < 0) {
+//            System.out.println("You need to pay your debt first!");
+//            return -1;
+//        }else{
+//            accountByACNumber.remove(this.AC_NUMBER);
+//            return 0;
+//        } //ToDo implement me with an Exception (maybe)
 //    }
 
     public String getAgency() {
@@ -125,7 +126,6 @@ public class Account {
     public double getBalance() {
         return balance;
     }
-
     public long getPasswordHash() {
         return passwordHash;
     }

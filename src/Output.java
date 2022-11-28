@@ -13,10 +13,21 @@ public abstract class Output {
         System.out.println("  4) Transfer");
         System.out.println("  5) Balance");
         System.out.println("  6) Bank statement");
-        System.out.println("  7) Back to Agencies");
+        System.out.println("  7) Remove Account");
+        System.out.println("  8) Back to Agencies");
 
         System.out.printf("\nOprtion: ");
-        int option = InsideHelpers.get_Int(1, 7);  //exception if I put a letter
+        int option = InsideHelpers.get_Int(1, 8);  //exception if I put a letter
+
+        return option;
+    }
+
+    public static int confirmation(){
+        System.out.println("Are you sure? ");
+        System.out.println("  1) Yes");
+        System.out.println("  2) No");
+        System.out.println("Option: ");
+        int option = InsideHelpers.get_Int(1, 2);
 
         return option;
     }
@@ -35,6 +46,11 @@ public abstract class Output {
         }else{System.out.println("Transfer couldn't be completed. Check your Balance");
         }
     }
+    public static void remove_message(boolean result) {
+        if (result) {System.out.println("Successful Remove");
+        } else {System.out.println("Account couldn't be removed!");}
+    }
+
     public static int menu_agency(){
         System.out.printf("Choose your agency: \n");
         Strings_Agency.agency_001();
