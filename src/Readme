@@ -101,7 +101,7 @@ nov 21, 22:44
 
     Doubt: How delete an object?
 
-    //ToDo - Do a java doc
+    //ToDo - Do a java doc (ignored in the basic mode - see Note15)
     //ToDO - Creat a verification in order to know if the Random generates a repetitive number (Done14)
 
 nov 22, 19:06
@@ -130,3 +130,19 @@ nov 25, 12:19
 nov 28, 15:59
 
     Done18: Another option was implemented to MenuSystemBank. So now It`s possible to remove an account.
+
+    Done19: Unit Test was completed with test about all the method possibles to implement a unit test. I have some setback
+        with the names of my HashMaps, but its okay.
+
+    Note15: I don't wanna implement a java doc now, because I'll probably change the Bank System a lot, mainly after starting
+        using files and a static login. About Exceptions, Im gonna implement them in the next mode, for now it's fine.
+        In the next mode, I`ll creat a way to edit personal data, specifically Address once all the other personal information
+        is FINAL like CPF.
+
+    //ToDo Java doc
+    //ToDo Exception
+    //ToDo Edit Personal Data option
+    //ToDo Loan
+    //ToDo Bank Interest Rate
+    //ToDo Investment Account
+
