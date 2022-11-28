@@ -97,11 +97,11 @@ nov 20, 12:34
 
 nov 21, 22:44
 
-    //ToDo - Creat a method to extinguish an account
+    //ToDo - Creat a method to extinguish an account (Done18)
 
     Doubt: How delete an object?
 
-    //ToDo - Transform agency in an object and do a java doc
+    //ToDo - Do a java doc
     //ToDO - Creat a verification in order to know if the Random generates a repetitive number (Done14)
 
 nov 22, 19:06
@@ -127,3 +127,6 @@ nov 25, 12:19
 
     Done17 (21:35): Login was implemented and the looping of it is working.
 
+nov 28, 15:59
+
+    Done18: Another option was implemented to MenuSystemBank. So now It`s possible to remove an account.
