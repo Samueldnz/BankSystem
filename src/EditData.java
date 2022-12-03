@@ -10,17 +10,8 @@ public abstract class EditData {
         ac1.setPasswordHash(password.hashCode());
     }
 
-    public static void edit_Address(@NotNull Account ac1, String country, String state, String city, String neighborhood,
-                                    String street, String number, String complement, String cep){
-
-        ac1.getAccountOwner().getAddress1().setCountry(country);
-        ac1.getAccountOwner().getAddress1().setState(state);
-        ac1.getAccountOwner().getAddress1().setCity(city);
-        ac1.getAccountOwner().getAddress1().setNeighborhood(neighborhood);
-        ac1.getAccountOwner().getAddress1().setStreet(street);
-        ac1.getAccountOwner().getAddress1().setNumber(number);
-        ac1.getAccountOwner().getAddress1().setComplement(complement);
-        ac1.getAccountOwner().getAddress1().setCEP(cep);
+    public static void edit_Address(@NotNull Account ac1, Address newAdress){
+        ac1.getAccountOwner().setAddress1(newAdress);
     }
 
 }

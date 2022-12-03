@@ -188,24 +188,16 @@ public class MenuSystemBank {
                                     case 3: //address
 
                                         System.out.println("Enter with your new address: ");
-                                        country = InputPersonalData.input_country();
-                                        state = InputPersonalData.input_state();
-                                        city = InputPersonalData.input_city();
-                                        neighborhood = InputPersonalData.input_neighborhood();
-                                        street = InputPersonalData.input_street();
-                                        number = InputPersonalData.input_number();
-                                        complement = InputPersonalData.input_complement();
-                                        CEP = InputPersonalData.input_cep();
+                                        Address adrss = Auxiliary.creat_newAdress();
 
                                         switch (Output.confirmation()){
                                             case 1: //yes
-                                                EditData.edit_Address(ac1, country, state, city, neighborhood, street, number,
-                                                        complement, CEP);
+                                                EditData.edit_Address(ac1, adrss);
                                                 System.out.println("Successful edit!");
                                                 break;
 
                                             case 2: //cancel
-                                                System.out.println("Edit cenceled!");
+                                                System.out.println("Edit canceled!");
                                                 break;
                                         }
                                         break;

@@ -153,5 +153,5 @@ dez 3, 14:55
         doing something wrong about the scope of the used variables. So to solve this problem, I made a temporary
         confirmation in each option of edition that will work for now.
 
-    Done21: I changed the way I built Account_Creator, I split it in two more methods.
+    Done21 (15:28): I changed the way I built Account_Creator, I split it in two more methods.
 
