@@ -13,11 +13,25 @@ public abstract class Output {
         System.out.println("  4) Transfer");
         System.out.println("  5) Balance");
         System.out.println("  6) Bank statement");
-        System.out.println("  7) Remove Account");
-        System.out.println("  8) Back to Agencies");
+        System.out.println("  7) Edit Personal Data");
+        System.out.println("  8) Remove Account");
+        System.out.println("  9) Back to Agencies");
 
         System.out.printf("\nOprtion: ");
-        int option = InsideHelpers.get_Int(1, 8);  //exception if I put a letter
+        int option = InsideHelpers.get_Int(1, 9);  //exception if I put a letter
+
+        return option;
+    }
+
+    public static int edit_menu(){
+        System.out.printf("Choose an option from the following ones: \n");
+        System.out.println("  1) Edit name");
+        System.out.println("  2) Edit password");
+        System.out.println("  3) Edit Address");
+        System.out.println("  4) Confirm");
+
+        System.out.printf("\nOprtion: ");
+        int option = InsideHelpers.get_Int(1, 4);  //exception if I put a letter
 
         return option;
     }

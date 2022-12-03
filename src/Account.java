@@ -7,7 +7,6 @@ public class Account {
     private final String AC_NUMBER;
     private Person accountOwner;
     private double balance;
-
     long passwordHash;
 
     public Account(String ag, String cc, Person accountOwner, String password, double value){
@@ -86,6 +85,7 @@ public class Account {
 
     }
 
+
     public String statement_listAsString (){
         StringBuilder output = new StringBuilder();
 
@@ -129,5 +129,15 @@ public class Account {
     public long getPasswordHash() {
         return passwordHash;
     }
+
+    public Person getAccountOwner() {
+        return accountOwner;
+    }
+
+    public void setPasswordHash(long passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+
 }
 

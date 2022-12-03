@@ -146,3 +146,10 @@ nov 28, 15:59
     //ToDo Bank Interest Rate
     //ToDo Investment Account
 
+dez 3, 14:55
+
+    Done20: I did an option to edit personal data, but for some reason isn`t working the way I wanted. I would like to
+        collect all the necessary data and then set them all at the same time with a option "confirm", but probably I'm
+        doing something wrong about the scope of the used variables. So to solve this problem, I made a temporary
+        confirmation in each option of edition that will work for now.
+    

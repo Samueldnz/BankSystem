@@ -64,7 +64,7 @@ public class MenuSystemBank {
                     break;
 
                 case 4: //Transfer
-                    Account acDestiny= null;
+                    Account acDestiny;
                     String acNumbDestiny, acNumbOrigin;
 
                     while(loginAttempts < 3 && !looping) {
@@ -137,7 +137,106 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 7: //remove
+                case 7: //edit personal data
+                    String newName, newPassword, country, state, city, neighborhood, street, number, complement, CEP;
+
+                    while(loginAttempts < 3 && !looping) {
+
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
+
+                        if (Auxiliary.Login_verification(acNumber, password)) {
+                            ac1 = Auxiliary.searchAccount(acNumber);
+
+                            while(!looping) {
+                                switch (Output.edit_menu()) {
+                                    case 1: //nome
+                                        System.out.println("Enter with your new name: ");
+                                        newName = InputPersonalData.input_name();
+                                        switch (Output.confirmation()){
+                                            case 1: //yes
+                                                EditData.edit_Name(ac1, newName);
+                                                System.out.println("Successful edit!");
+                                                break;
+
+                                            case 2: //cancel
+                                                System.out.println("Edit canceled!");
+                                                break;
+                                        }
+                                        break;
+
+
+                                    case 2: //password
+                                        System.out.println("Enter your new password: ");
+                                        newPassword = InputPersonalData.input_password();
+
+                                        switch (Output.confirmation()){
+                                            case 1: //yes
+                                                EditData.edit_Password(ac1, newPassword);
+                                                System.out.println("Successful edit!");
+                                                break;
+
+                                            case 2: //cancel
+                                                System.out.println("Edit canceled!");
+                                                break;
+                                        }
+                                        break;
+
+                                    case 3: //address
+
+                                        System.out.println("Enter with your new address: ");
+                                        country = InputPersonalData.input_country();
+                                        state = InputPersonalData.input_state();
+                                        city = InputPersonalData.input_city();
+                                        neighborhood = InputPersonalData.input_neighborhood();
+                                        street = InputPersonalData.input_street();
+                                        number = InputPersonalData.input_number();
+                                        complement = InputPersonalData.input_complement();
+                                        CEP = InputPersonalData.input_cep();
+
+                                        switch (Output.confirmation()){
+                                            case 1: //yes
+                                                EditData.edit_Address(ac1, country, state, city, neighborhood, street, number,
+                                                        complement, CEP);
+                                                System.out.println("Successful edit!");
+                                                break;
+
+                                            case 2: //cancel
+                                                System.out.println("Edit cenceled!");
+                                                break;
+                                        }
+                                        break;
+
+                                    case 4: //confirm
+//                                        ac1 = Auxiliary.searchAccount(acNumber);
+//                                        switch (Output.confirmation()) {
+//                                            case 1:
+//                                                EditData.edit_Name(ac1, newName);
+//                                                EditData.edit_Password(ac1, newPassword);
+//                                                EditData.edit_Address(ac1, country, state, city, neighborhood, street, number,
+//                                                        complement, CEP);
+//                                                System.out.println("Successful edit!");
+//                                                looping = true;
+//                                                break;
+//                                            case 2:
+//                                                System.out.println("Edit was canceled!");
+//                                                looping = true;
+//                                                break;
+//                                        }
+                                        looping = true;
+                                        break;
+                                }
+                            }
+                        } else {
+                            System.out.println("Login failed!");
+                        }
+                    }
+                    break;
+
+                case 8: //remove
 
                     switch (Output.confirmation()) {
                         case 1:
@@ -164,7 +263,7 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 8: //Back to agencies
+                case 9: //Back to agencies
                     return;
             }
         }
