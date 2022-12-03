@@ -12,23 +12,10 @@ public abstract class Auxiliary {
 
     public static Account account_Creator(String agency) {
 
-        String name = InputPersonalData.input_name();
-        String CPF = InputPersonalData.input_cpf();
-        String ID = InputPersonalData.input_id();
+        Person owner = creat_newPerson(creat_newAdress());
+
         String password = InputPersonalData.input_password();
-        String country = InputPersonalData.input_country();
-        String state = InputPersonalData.input_state();
-        String city = InputPersonalData.input_city();
-        String neighborhood = InputPersonalData.input_neighborhood();
-        String street = InputPersonalData.input_street();
-        String number = InputPersonalData.input_number();
-        String complement = InputPersonalData.input_complement();
-        String CEP = InputPersonalData.input_cep();
-
         double firstValue = InputPersonalData.input_firstValue();
-
-        Address home = new Address(country, state, city, neighborhood, street, number, complement, CEP);
-        Person owner = new Person(name, CPF, ID, home);
 
         String number_account = generator_accountNumber();
 
@@ -63,5 +50,27 @@ public abstract class Auxiliary {
     public static boolean Login_verification(String AcNumber, String password) {
         Account ac1 = accountByACNumber.get(AcNumber);
         return ac1 != null && ac1.getPasswordHash() == password.hashCode();
+    }
+
+    public static Person creat_newPerson(Address address1){
+        String name = InputPersonalData.input_name();
+        String CPF = InputPersonalData.input_cpf();
+        String ID = InputPersonalData.input_id();
+
+        return new Person(name, CPF, ID, address1);
+    }
+
+    public static Address creat_newAdress(){
+
+        String country = InputPersonalData.input_country();
+        String state = InputPersonalData.input_state();
+        String city = InputPersonalData.input_city();
+        String neighborhood = InputPersonalData.input_neighborhood();
+        String street = InputPersonalData.input_street();
+        String number = InputPersonalData.input_number();
+        String complement = InputPersonalData.input_complement();
+        String CEP = InputPersonalData.input_cep();
+
+        return new Address(country, state, city, neighborhood, street, number, complement, CEP);
     }
 }
