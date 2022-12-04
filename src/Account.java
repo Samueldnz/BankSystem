@@ -1,19 +1,26 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Date;
 public class Account {
     ArrayList<String> statement_list = new ArrayList<>();
     private static final double MIN_VALUE = 1.0;
+    private static final double CREDIT_INCREASE = 0.01;
+    private static final double ZERO = 0.0;
     private final String AGENCY;
     private final String AC_NUMBER;
     private Person accountOwner;
     private double balance;
-    long passwordHash;
+    private long passwordHash;
+    private static double loanCredit;
+    private double loanDebit;
 
     public Account(String ag, String cc, Person accountOwner, String password, double value){
         this.accountOwner = accountOwner;
         this.AGENCY = ag;
         this.AC_NUMBER = cc;
         this.passwordHash = password.hashCode();
+        this.loanDebit = ZERO;
+        loanCredit = ZERO;
 
         deposit(value);
     }
@@ -26,6 +33,7 @@ public class Account {
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Withdraw: R$ %.2f", value);
         statement_list.add(transaction);
+        loanCredit += CREDIT_INCREASE;
         return true;
     }
 
@@ -48,6 +56,7 @@ public class Account {
         Date now = new Date(); //set a date week mm/dd hour aa
         String transaction = String.format("(" + now + ") Deposit: R$ %.2f", value);
         statement_list.add(transaction);
+        loanCredit += CREDIT_INCREASE;
         return true;
 
     }
@@ -68,6 +77,7 @@ public class Account {
 
         if(!this.withDrawToTransfer(value)){return false;}
         if(!destiny.depositToTransfer(value)){return false;}
+        loanCredit += CREDIT_INCREASE;
         return true;
     }
 
