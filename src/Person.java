@@ -14,6 +14,19 @@ public class Person{
 
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder output = new StringBuilder();
+
+        output.append(String.format("  Name: %s\n", name));
+        output.append(String.format("  CPF: %s\n", CPF));
+        output.append(String.format("  ID: %s\n", ID));
+
+        return output.toString();
+
+    }
+
     public String getName() {
         return this.name;
     }

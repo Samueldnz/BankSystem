@@ -152,6 +152,10 @@ public class MenuSystemBank {
                             ac1 = Auxiliary.searchAccount(acNumber);
 
                             while(!looping) {
+
+                                System.out.println("Your personal data: ");
+                                Output.output_personalData(ac1);
+
                                 switch (Output.edit_menu()) {
                                     case 1: //nome
                                         System.out.println("Enter with your new name: ");
@@ -188,7 +192,7 @@ public class MenuSystemBank {
                                     case 3: //address
 
                                         System.out.println("Enter with your new address: ");
-                                        Address adrss = Auxiliary.creat_newAdress();
+                                        Address adrss = Auxiliary.creat_newAddress();
 
                                         switch (Output.confirmation()){
                                             case 1: //yes

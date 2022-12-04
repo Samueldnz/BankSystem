@@ -12,7 +12,7 @@ public abstract class Auxiliary {
 
     public static Account account_Creator(String agency) {
 
-        Person owner = creat_newPerson(creat_newAdress());
+        Person owner = creat_newPerson(creat_newAddress());
 
         String password = InputPersonalData.input_password();
         double firstValue = InputPersonalData.input_firstValue();
@@ -60,7 +60,7 @@ public abstract class Auxiliary {
         return new Person(name, CPF, ID, address1);
     }
 
-    public static Address creat_newAdress(){
+    public static Address creat_newAddress(){
 
         String country = InputPersonalData.input_country();
         String state = InputPersonalData.input_state();

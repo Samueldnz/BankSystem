@@ -22,6 +22,24 @@ public class Address {
         this.CEP = CEP;
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder output = new StringBuilder();
+
+        output.append(String.format("  Country: %s\n", country));
+        output.append(String.format("  State: %s\n", state));
+        output.append(String.format("  City: %s\n", city));
+        output.append(String.format("  Neighborhood: %s\n", neighborhood));
+        output.append(String.format("  Street: %s\n", street));
+        output.append(String.format("  Number: %s\n", number));
+        output.append(String.format("  Complement: %s\n", complement));
+        output.append(String.format("  CEP: %s\n", CEP));
+
+        return output.toString();
+
+    }
+
     public String getCountry() {
         return country;
     }

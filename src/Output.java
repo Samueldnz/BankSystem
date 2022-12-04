@@ -18,9 +18,8 @@ public abstract class Output {
         System.out.println("  9) Back to Agencies");
 
         System.out.printf("\nOprtion: ");
-        int option = InsideHelpers.get_Int(1, 9);  //exception if I put a letter
 
-        return option;
+        return InsideHelpers.get_Int(1, 9);
     }
 
     public static int edit_menu(){
@@ -31,9 +30,8 @@ public abstract class Output {
         System.out.println("  4) Confirm");
 
         System.out.printf("\nOprtion: ");
-        int option = InsideHelpers.get_Int(1, 4);  //exception if I put a letter
 
-        return option;
+        return InsideHelpers.get_Int(1, 4);
     }
 
     public static int confirmation(){
@@ -41,9 +39,8 @@ public abstract class Output {
         System.out.println("  1) Yes");
         System.out.println("  2) No");
         System.out.println("Option: ");
-        int option = InsideHelpers.get_Int(1, 2);
 
-        return option;
+        return InsideHelpers.get_Int(1, 2);
     }
 
     public static void withDraw_message(boolean result){
@@ -76,8 +73,12 @@ public abstract class Output {
         System.out.println("\n7) Leave Sampaio Brothers Bank");
 
         System.out.printf("\nOprtion: ");
-        int option_agency = InsideHelpers.get_Int(1, 7);  //exception if I put a letter
 
-        return option_agency;
+        return InsideHelpers.get_Int(1, 7);
+    }
+
+    public static void output_personalData(Account ac){
+        System.out.printf(ac.getAccountOwner().toString());
+        System.out.println(ac.getAccountOwner().getAddress1().toString());
     }
 }

@@ -90,6 +90,8 @@ public class Account {
         output.append(String.format("    Account Number: %s\n", getAcNumber()));
         output.append(String.format("    Name: %s\n", accountOwner.getName()));
         output.append(String.format("    CPF: %s\n", accountOwner.getCPF()));
+        output.append(String.format("    Credit of loan: %.4f\n", getLoanCredit()));
+        output.append(String.format("    Debit to pay: %.2f\n", getLoanDebit()));
         output.append(String.format("    Balance: %.2f\n", getBalance()));
         return output.toString();
 
@@ -148,6 +150,12 @@ public class Account {
         this.passwordHash = passwordHash;
     }
 
+    public static double getLoanCredit() {
+        return loanCredit;
+    }
 
+    public double getLoanDebit() {
+        return loanDebit;
+    }
 }
 

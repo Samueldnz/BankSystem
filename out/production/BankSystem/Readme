@@ -153,5 +153,17 @@ dez 3, 14:55
         doing something wrong about the scope of the used variables. So to solve this problem, I made a temporary
         confirmation in each option of edition that will work for now.
 
-    Done21: I changed the way I built Account_Creator, I split it in two more methods.
+    Done21 (15:28): I changed the way I built Account_Creator, I split it in two more methods.
+
+dez 4, 15:10
+
+    Note16: I don't know how exactly this things works in real world, but in my system I was thinking in kind of a credit
+        system to calculate how much money an account is able to borrow on a loan. Like: if a person has 1 point of
+        credit, he can get 100% of all his money as a loan. So to do this, I probably will need to change how a Person and
+        an Account is creat.
+
+    Note17: When I`ll creat an Investment account, I can use interface and genetic types to build methods that work to
+        both kind of account.
+
+    //ToDo Unit tests of Edit method and loanCredit
 
