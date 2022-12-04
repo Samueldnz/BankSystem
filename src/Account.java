@@ -4,7 +4,7 @@ import java.util.Date;
 public class Account {
     ArrayList<String> statement_list = new ArrayList<>();
     private static final double MIN_VALUE = 1.0;
-    private static final double CREDIT_INCREASE = 0.01;
+    private static final double CREDIT_INCREASE = 0.0001; //same as 0.01%
     private static final double ZERO = 0.0;
     private final String AGENCY;
     private final String AC_NUMBER;
@@ -20,9 +20,8 @@ public class Account {
         this.AC_NUMBER = cc;
         this.passwordHash = password.hashCode();
         this.loanDebit = ZERO;
-        loanCredit = ZERO;
-
         deposit(value);
+        loanCredit = ZERO;
     }
 
     public boolean withDraw(double value){
@@ -78,6 +77,14 @@ public class Account {
         if(!this.withDrawToTransfer(value)){return false;}
         if(!destiny.depositToTransfer(value)){return false;}
         loanCredit += CREDIT_INCREASE;
+        return true;
+    }
+
+    public boolean loan(double value){
+        if(loanCredit < 0.01 || loanCredit*this.balance < value) return false;
+
+        this.loanDebit = loanCredit * this.balance;
+        loanCredit += 10 * CREDIT_INCREASE;
         return true;
     }
 

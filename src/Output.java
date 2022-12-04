@@ -1,3 +1,5 @@
+import java.security.PublicKey;
+
 public abstract class Output {
 
     public static void welcome_message(){
@@ -11,11 +13,12 @@ public abstract class Output {
         System.out.println("  2) Withdraw");
         System.out.println("  3) Deposit");
         System.out.println("  4) Transfer");
-        System.out.println("  5) Balance");
-        System.out.println("  6) Bank statement");
-        System.out.println("  7) Edit Personal Data");
-        System.out.println("  8) Remove Account");
-        System.out.println("  9) Back to Agencies");
+        System.out.println("  5) Loan");
+        System.out.println("  6) Balance");
+        System.out.println("  7) Bank statement");
+        System.out.println("  8) Edit Personal Data");
+        System.out.println("  9) Remove Account");
+        System.out.println("  0) Back to Agencies");
 
         System.out.printf("\nOprtion: ");
 
@@ -56,6 +59,11 @@ public abstract class Output {
         if(result) {System.out.println("Successful Transfer!\n");
         }else{System.out.println("Transfer couldn't be completed. Check your Balance");
         }
+    }
+
+    public static void loan_message(boolean result){
+        if(result){ System.out.println("Successful loan!");}
+        else {System.out.println("You don`t have enough credit!");}
     }
     public static void remove_message(boolean result) {
         if (result) {System.out.println("Successful Remove");

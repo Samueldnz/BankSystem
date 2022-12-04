@@ -142,7 +142,7 @@ nov 28, 15:59
     //ToDo Java doc
     //ToDo Exception
     //ToDo Edit Personal Data option
-    //ToDo Loan
+    //ToDo Loan (Done 22)
     //ToDo Bank Interest Rate
     //ToDo Investment Account
 
@@ -166,4 +166,9 @@ dez 4, 15:10
         both kind of account.
 
     //ToDo Unit tests of Edit method and loanCredit
+    /ToDo Unit tests of Loan method
+
+    Done22 (20:28): A loan method was built with all his auxiliary methods.
+
+    Note18: I'm thinking to put a letter in the end of an account number to increase the amount of accounts possibles.
 

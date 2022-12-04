@@ -97,7 +97,28 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 5: //Balance
+                case 5: //loan
+                    while(loginAttempts < 3 && !looping){
+                        System.out.println("Enter with your account number: ");
+                        acNumber = InsideHelpers.get_string();
+                        loginAttempts++;
+                        System.out.print(String.format("Enter with your password (%dº Attempt): \n", loginAttempts));
+                        password = InsideHelpers.get_string();
+
+                        if(Auxiliary.Login_verification(acNumber, password)){
+                            System.out.println("Successful Login!");
+                            ac1 = Auxiliary.searchAccount(acNumber);
+                            System.out.println("Enter loan amount: ");
+                            double loanAmount = InsideHelpers.get_double(MIN_VALUE);
+                            Output.loan_message(ac1.loan(loanAmount));
+                            looping = true;
+                        }else{
+                            System.out.println("Login Failed!");
+                        }
+                    }
+                    break;
+
+                case 6: //Balance
                     while(loginAttempts < 3 && !looping) {
                         System.out.println("Enter with your account number: ");
                         acNumber = InsideHelpers.get_string();
@@ -117,7 +138,7 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 6: //Bank statement
+                case 7: //Bank statement
                     while(loginAttempts < 3 && !looping) {
                         System.out.println("Enter with your account number: ");
                         acNumber = InsideHelpers.get_string();
@@ -137,7 +158,7 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 7: //edit personal data
+                case 8: //edit personal data
                     String newName, newPassword, country, state, city, neighborhood, street, number, complement, CEP;
 
                     while(loginAttempts < 3 && !looping) {
@@ -232,7 +253,7 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 8: //remove
+                case 9: //remove
 
                     switch (Output.confirmation()) {
                         case 1:
@@ -259,7 +280,7 @@ public class MenuSystemBank {
                     }
                     break;
 
-                case 9: //Back to agencies
+                case 0: //Back to agencies
                     return;
             }
         }
