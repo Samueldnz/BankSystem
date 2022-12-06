@@ -7,11 +7,11 @@ public abstract class EditData {
     }
 
     public static void edit_Password(@NotNull Account ac1, String password){
-        ac1.setPasswordHash(password.hashCode());
+        ac1.setPasswordHash(password.hashCode()); 
     }
 
-    public static void edit_Address(@NotNull Account ac1, Address newAdress){
-        ac1.getAccountOwner().setAddress1(newAdress);
+    public static void edit_Address(@NotNull Account ac1, Address newAddress){
+        ac1.getAccountOwner().setAddress1(newAddress);
     }
 
 }

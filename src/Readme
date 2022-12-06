@@ -15,12 +15,12 @@ nov 14, 20:17:
 nov 15, 22:25:
     Done2: In the program? nothing. About my doubt? nothing. About the notes? I searched and tested, but I realized I have
             more question. I`ll send an e-mail to the teacher in order to work out my problem. Until now, there isn`t
-            a form to creat a ArrayList of Array without creating any object.
+            a form to create a ArrayList of Array without creating any object.
             
 nov 16, 14:36
     Note4: In Java, we always can encapsulate a primitive type using capital letter. Exemplar: Long is an object to long like
     	Integer is an object to int. Instead of using three accounts to each person, I can set just one account to each one.
-    	In that way, I'll be able to creat an unique object with both characteristics.
+    	In that way, I'll be able to create an unique object with both characteristics.
 
     Done3: It was added a date to the methods Deposit and withDraw and It was created an ArrayList of Strings to build
            a balance of an account
@@ -30,7 +30,7 @@ nov 17, 14:02
     	of Arraylist it`s totally possible. (ArrayList<ArrayList<String>>) and to see more, just access the favorites in
     	the e-mail.
 
-    Done4 (16:58): I realized I can convert a number to a String using String.valueOf, so now I'm able to creat a ArrayList
+    Done4 (16:58): I realized I can convert a number to a String using String.valueOf, so now I'm able to create a ArrayList
         of accounts.
 
     Note6: I probably won't use ArrayList to save more than an account for each person. I`m thinking to use the own object
@@ -53,7 +53,7 @@ nov 18, 16:20
 
     Done7 (19:51): I had changed the way that account_creator was built and I created a new class named InputPersonalData
         to get all necessary data. Finally, I rebuilt the account_creator in order to receive all data and call the
-        necessary constructors to build the creat an account.
+        necessary constructors to build the create an account.
 
     Note9 (21:16): OH SHIT! My System is working!!! .....with some bugs of course, I need to work out them
 
@@ -67,7 +67,7 @@ nov 19, 11:05
         I had used the same Scanner in InsideHelpers and added I new char variable to get the character new line (\n) that
         comes after the number, all this things in InsideHelpers. (char a = input.next().charAt(0);)
 
-    Note10 (12:54): If I wanna creat a login and each agency have your own clients, I will need to creat an object to
+    Note10 (12:54): If I wanna create a login and each agency have your own clients, I will need to create an object to
         agency and change the way I built the creator.
 
     Done10 (13:22): Bank Statement was implemented.
@@ -97,12 +97,12 @@ nov 20, 12:34
 
 nov 21, 22:44
 
-    //ToDo - Creat a method to extinguish an account (Done18)
+    //ToDo - Create a method to extinguish an account (Done18)
 
     Doubt: How delete an object?
 
     //ToDo - Do a java doc (ignored in the basic mode - see Note15)
-    //ToDO - Creat a verification in order to know if the Random generates a repetitive number (Done14)
+    //ToDO - Create a verification in order to know if the Random generates a repetitive number (Done14)
 
 nov 22, 19:06
 
@@ -112,7 +112,7 @@ nov 24, 22:10
 
     Done13: I used Hashmap instead of using ArrayList to save my account and change the way a execute the MenuSystemBank.
         So now, everytime I need to use an option like withdraw or deposit, I will need to enter with my account number,
-        ir order to be independent of option Creat Account. This way of building my program is temporary, it'll work until
+        ir order to be independent of option Create Account. This way of building my program is temporary, it'll work until
         I build a login system.
 
     Done14 (22:56): All the account numbers were put on an Hashset and I built account number verification based on this
@@ -136,7 +136,7 @@ nov 28, 15:59
 
     Note15: I don't wanna implement a java doc now, because I'll probably change the Bank System a lot, mainly after starting
         using files and a static login. About Exceptions, Im gonna implement them in the next mode, for now it's fine.
-        In the next mode, I`ll creat a way to edit personal data, specifically Address once all the other personal information
+        In the next mode, I`ll create a way to edit personal data, specifically Address once all the other personal information
         is FINAL like CPF.
 
     //ToDo Java doc
@@ -160,9 +160,9 @@ dez 4, 15:10
     Note16: I don't know how exactly this things works in real world, but in my system I was thinking in kind of a credit
         system to calculate how much money an account is able to borrow on a loan. Like: if a person has 1 point of
         credit, he can get 100% of all his money as a loan. So to do this, I probably will need to change how a Person and
-        an Account is creat.
+        an Account is create.
 
-    Note17: When I`ll creat an Investment account, I can use interface and genetic types to build methods that work to
+    Note17: When I`ll create an Investment account, I can use interface and genetic types to build methods that work to
         both kind of account.
 
     //ToDo Unit tests of Edit method and loanCredit
@@ -172,3 +172,6 @@ dez 4, 15:10
 
     Note18: I'm thinking to put a letter in the end of an account number to increase the amount of accounts possibles.
 
+dez 6, 18:51
+
+    Note19: It`s possible to create a inner class about transaction instead of using just Strings.

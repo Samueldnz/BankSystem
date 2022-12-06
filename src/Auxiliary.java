@@ -6,8 +6,8 @@ import java.util.Random;
 public abstract class Auxiliary {
 
     static Random myRMgenerator = new Random();
-    public static HashMap<String, Account> accountByACNumber = new HashMap<>();
-    public static HashSet<String> acNumberHash = new HashSet<>();
+    private static HashMap<String, Account> accountByACNumber = new HashMap<>();
+    private static HashSet<String> acNumberHash = new HashSet<>();
 
 
     public static Account account_Creator(String agency) {
@@ -72,5 +72,13 @@ public abstract class Auxiliary {
         String CEP = InputPersonalData.input_cep();
 
         return new Address(country, state, city, neighborhood, street, number, complement, CEP);
+    }
+
+    public static HashMap<String, Account> getAccountByACNumber() {
+        return accountByACNumber;
+    }
+
+    public static HashSet<String> getAcNumberHash() {
+        return acNumberHash;
     }
 }

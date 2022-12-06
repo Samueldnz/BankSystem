@@ -117,7 +117,7 @@ public class Account {
 
     public boolean remove_Account() {
         if(this.balance == 0){
-            Auxiliary.accountByACNumber.remove(this.AC_NUMBER);
+            Auxiliary.getAccountByACNumber().remove(this.AC_NUMBER);
             return true;
         }
         return false;
