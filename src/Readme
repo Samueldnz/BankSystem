@@ -165,8 +165,8 @@ dez 4, 15:10
     Note17: When I`ll create an Investment account, I can use interface and genetic types to build methods that work to
         both kind of account.
 
-    //ToDo Unit tests of Edit method and loanCredit
-    /ToDo Unit tests of Loan method
+    //ToDo Unit tests of Edit method and loanCredit (Done23)
+    /ToDo Unit tests of Loan method (Done24)
 
     Done22 (20:28): A loan method was built with all his auxiliary methods.
 
@@ -175,3 +175,11 @@ dez 4, 15:10
 dez 6, 18:51
 
     Note19: It`s possible to create a inner class about transaction instead of using just Strings.
+
+    //ToDo Use Enum to set the different agencies
+
+dez 8, 14:51
+
+    Done23: Unit Tests of Edit Method
+
+    Done24 (16:43): Unit Tests of Loan Method was built and caught some bugs in the code

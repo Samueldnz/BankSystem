@@ -4,7 +4,7 @@ import java.util.Date;
 public class Account {
     ArrayList<String> statement_list = new ArrayList<>();
     private static final double MIN_VALUE = 1.0;
-    private static final double CREDIT_INCREASE = 0.0001; //same as 0.01%
+    private static final double CREDIT_INCREASE = 0.00010; //same as 0.01%
     private static final double ZERO = 0.0;
     private final String AGENCY;
     private final String AC_NUMBER;
@@ -81,9 +81,9 @@ public class Account {
     }
 
     public boolean loan(double value){
-        if(loanCredit < 0.01 || loanCredit*this.balance < value) return false;
+        if(loanCredit < 0.01 || value < MIN_VALUE || loanCredit * this.balance < value) return false;
 
-        this.loanDebit = loanCredit * this.balance;
+        this.loanDebit += value;
         loanCredit += 10 * CREDIT_INCREASE;
         return true;
     }
@@ -157,12 +157,14 @@ public class Account {
         this.passwordHash = passwordHash;
     }
 
-    public static double getLoanCredit() {
+    public double getLoanCredit() {
         return loanCredit;
     }
 
     public double getLoanDebit() {
         return loanDebit;
     }
+
+
 }
 
