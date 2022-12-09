@@ -144,7 +144,7 @@ nov 28, 15:59
     //ToDo Edit Personal Data option (Done 20)
     //ToDo Loan (Done 22)
     //ToDo Bank Interest Rate
-    //ToDo Investment Account (Note20)
+    //ToDo Investment Account (Note 17, 20)
 
 dez 3, 14:55
 
@@ -175,7 +175,7 @@ dez 4, 15:10
 
 dez 6, 18:51
 
-    Note19: It`s possible to create a inner class about transaction instead of using just Strings.
+    Note19: It`s possible to create a inner class about transaction instead of using just Strings. (Forwent)
 
     //ToDo Use Enum to set the different agencies (Done25)
 
@@ -192,9 +192,14 @@ dez 8, 14:51
          thinking to change how I built the loanCredit, maybe increase a little in the value of it.
 
     Note21: Instead of using a Abstract Class just to hold all the outputs of agency, maybe making this kind of information
-        an attribute of the respective Enums could work.
-    //ToDo see the the Notes17, 18, 19, 21
+        an attribute of the respective Enums could work. (Forwent)
+    //ToDo see the the Note18, 19, 21 (Done 26, Note 22, 23)
 
 dez 9, (16:18)
 
     Done26: I added a letter (char) in account number to increase the amount of possible account numbers.
+
+    Note22: It's not necessary implement a inner class just to safe Strings. String is already an object, so I just need
+        to put it in a lis.
+
+    Note23 (17:14): Idea of Note21 won't work 'cause of the way I built the agency menu

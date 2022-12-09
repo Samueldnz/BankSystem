@@ -171,10 +171,11 @@ dez 4, 15:10
     Done22 (20:28): A loan method was built with all his auxiliary methods.
 
     Note18: I'm thinking to put a letter in the end of an account number to increase the amount of accounts possibles.
+        (Done 26)
 
 dez 6, 18:51
 
-    Note19: It`s possible to create a inner class about transaction instead of using just Strings.
+    Note19: It`s possible to create a inner class about transaction instead of using just Strings. (Forwent)
 
     //ToDo Use Enum to set the different agencies (Done25)
 
@@ -193,3 +194,10 @@ dez 8, 14:51
     Note21: Instead of using a Abstract Class just to hold all the outputs of agency, maybe making this kind of information
         an attribute of the respective Enums could work.
     //ToDo see the the Notes17, 18, 19, 21
+
+dez 9, (16:18)
+
+    Done26: I added a letter (char) in account number to increase the amount of possible account numbers.
+
+    Note22: It's not necessary implement a inner class just to safe Strings. String is already an object, so I just need
+        to put it in a lis.
