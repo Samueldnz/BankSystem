@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 
+
 public abstract class Auxiliary {
 
     static Random myRMgenerator = new Random();
@@ -33,14 +34,16 @@ public abstract class Auxiliary {
         boolean hasAcNumber;
         String s;
 
+        char c = (char) (myRMgenerator.nextInt(26) + 'a');
+
         do {
-            s = String.valueOf(myRMgenerator.nextLong(000000, 999999));
+            s = c + String.valueOf(myRMgenerator.nextLong(000000, 999999)); //char low case
             hasAcNumber = searchAcNumber(s);
         } while (hasAcNumber);
 
         acNumberHash.add(s);
 
-        return s;
+        return s.toUpperCase(); //char UpperCase
     }
 
     public static Account searchAccount(String acNumber) {

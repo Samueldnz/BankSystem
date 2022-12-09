@@ -18,7 +18,7 @@ public class MenuSystemBank {
                     System.out.println("Enter your personal data: ");
                     ac1 = Auxiliary.account_Creator(agency);
                     System.out.println("Successful account creation!");
-                    System.out.println(String.format("Your Account number is %s!", ac1.getAcNumber()));
+                    System.out.println(String.format("Your Account number is %s", ac1.getAcNumber()));
                     break;
 
                 case 2: //withdraw
