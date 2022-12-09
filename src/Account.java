@@ -6,7 +6,7 @@ public class Account {
     private static final double MIN_VALUE = 1.0;
     private static final double CREDIT_INCREASE = 0.00010; //same as 0.01%
     private static final double ZERO = 0.0;
-    private final String AGENCY;
+    private final AgencyType AGENCY;
     private final String AC_NUMBER;
     private Person accountOwner;
     private double balance;
@@ -14,7 +14,7 @@ public class Account {
     private static double loanCredit;
     private double loanDebit;
 
-    public Account(String ag, String cc, Person accountOwner, String password, double value){
+    public Account(AgencyType ag, String cc, Person accountOwner, String password, double value){
         this.accountOwner = accountOwner;
         this.AGENCY = ag;
         this.AC_NUMBER = cc;
@@ -136,7 +136,7 @@ public class Account {
 //        } //ToDo implement me with an Exception (maybe)
 //    }
 
-    public String getAgency() {
+    public AgencyType getAgency() {
         return AGENCY;
     }
     public String getAcNumber() {

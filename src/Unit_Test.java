@@ -23,8 +23,8 @@ public class Unit_Test{
         home = new Address("Brasil", "Rio de Janeiro", "Resende", "none",
                 "none", "1", "none", "42543543");
         owner = new Person("Samuel", "1234567", "12345678", home);
-        ac1 = new Account("001", "231231", owner, "123456", 1000);
-        ac2  = new Account("001", "098765", owner, "123456", 1000);
+        ac1 = new Account(AgencyType.A001, "231231", owner, "123456", 1000);
+        ac2  = new Account(AgencyType.A001, "098765", owner, "123456", 1000);
 
         accountByAcNumber = new HashMap<>();
         accountByAcNumber.put("231231", ac1);

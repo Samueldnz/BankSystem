@@ -3,7 +3,7 @@ public class MenuSystemBank {
     private static final double MIN_VALUE = 1.0;
     private static final double MAX_VALUE = 20000.0;
 
-    public static void SystemBank(String agency) {
+    public static void SystemBank(AgencyType agency) {
         while (true) {
             double value = 0;
             Account ac1 = null;

@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
 import java.util.Locale;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,22 +8,22 @@ public class Main {
         while(true){
             switch (Output.menu_agency()){
                 case 1:
-                    MenuSystemBank.SystemBank("001");
+                    MenuSystemBank.SystemBank(AgencyType.A001);
                     break;
                 case 2:
-                    MenuSystemBank.SystemBank("002");
+                    MenuSystemBank.SystemBank(AgencyType.A002);
                     break;
                 case 3:
-                    MenuSystemBank.SystemBank("003");
+                    MenuSystemBank.SystemBank(AgencyType.A003);
                     break;
                 case 4:
-                    MenuSystemBank.SystemBank("004");
+                    MenuSystemBank.SystemBank(AgencyType.A004);
                     break;
                 case 5:
-                    MenuSystemBank.SystemBank("005");
+                    MenuSystemBank.SystemBank(AgencyType.A005);
                     break;
                 case 6:
-                    MenuSystemBank.SystemBank("006");
+                    MenuSystemBank.SystemBank(AgencyType.A006);
                     break;
                 case 7: //leave
                     Output.goodbye_message();

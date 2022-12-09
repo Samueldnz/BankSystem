@@ -10,7 +10,7 @@ public abstract class Auxiliary {
     private static HashSet<String> acNumberHash = new HashSet<>();
 
 
-    public static Account account_Creator(String agency) {
+    public static Account account_Creator(AgencyType agency) {
 
         Person owner = creat_newPerson(creat_newAddress());
 
