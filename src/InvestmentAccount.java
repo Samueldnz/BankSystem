@@ -22,16 +22,16 @@ public class InvestmentAccount {
         this.accountOwner = accountOwner;
         this.INV_AC_NUMBER = ac;
         this.passwordHash = password.hashCode();
-        deposit(amount);
+        deposit(amount, invType);
     }
 
-    public boolean deposit(double amount){
-        if(amount< MIN_VALUE){  //at least R$1,00 is needed to deposit
+    public boolean deposit(double amount, InvestmentType invType){
+        if(amount < invType.getMIN_DEPOSIT()){
             return false;
         }
-        this.balance += amount;
+        invType.setBalance(invType.getBalance() + amount);
         Date now = new Date(); //set a date week mm/dd hour aa
-        String transaction = String.format("(" + now + ") Deposit in %s: R$ %.2f", InvestmentType.values(), amount);
+        String transaction = String.format("(" + now + ") Deposit in %s: R$ %.2f", invType.getName(), amount);
         statement_list.add(transaction);
         loanCredit += CREDIT_INCREASE;
         return true;

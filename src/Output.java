@@ -22,7 +22,7 @@ public abstract class Output {
 
         System.out.printf("\nOprtion: ");
 
-        return InsideHelpers.get_Int(1, 9);
+        return InsideHelpers.get_Int(0, 9);
     }
 
     public static int edit_menu(){
