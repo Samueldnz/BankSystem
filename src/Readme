@@ -203,3 +203,6 @@ dez 9, (16:18)
         to put it in a lis.
 
     Note23 (17:14): Idea of Note21 won't work 'cause of the way I built the agency menu
+
+    Done27 (22:59): I started building an object to Investment Account, but there's a lot more to build. I just implemented
+        the basic and it`s like a copy of Account. Then, I will change to the idea listed in Note 17 and 20.
