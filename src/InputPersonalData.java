@@ -1,5 +1,6 @@
 public abstract class InputPersonalData {
 
+    // methods that catch from the keyboard strings and other personal data to creat the objects
     public static String input_name(){
         System.out.printf("  Name: ");
         String name = InsideHelpers.get_string();

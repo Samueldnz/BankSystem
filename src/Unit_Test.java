@@ -9,11 +9,16 @@ public class Unit_Test{
 
     final double DELTA = 0.000000001;
     Address home;
-    Person owner;
-    Account ac1;
-    Account ac2;
+    Person holder;
+    Account ac1, ac2;
     HashMap<String, Account> accountByAcNumber;
 
+    /**
+     * It`s an overload of the method in Auxiliary. It was built because the name of HashMap is different from there
+     * @param AcNumber number account that will be checked
+     * @param password password that will be checked
+     * @return boolean true or false
+     */
     public boolean Login_verification(String AcNumber, String password) {
         Account ac1 = accountByAcNumber.get(AcNumber);
         return ac1 != null && ac1.getPasswordHash() == password.hashCode();
@@ -22,15 +27,16 @@ public class Unit_Test{
     public void setUp(){
         home = new Address("Brasil", "Rio de Janeiro", "Resende", "none",
                 "none", "1", "none", "42543543");
-        owner = new Person("Samuel", "1234567", "12345678", home);
-        ac1 = new Account(AgencyType.A001, "231231", owner, "123456", 1000);
-        ac2  = new Account(AgencyType.A001, "098765", owner, "123456", 1000);
+        holder = new Person("Samuel", "1234567", "12345678", home);
+        ac1 = new Account(AgencyType.A001, "231231", holder, "123456", 1000);
+        ac2  = new Account(AgencyType.A001, "098765", holder, "123456", 1000);
 
         accountByAcNumber = new HashMap<>();
         accountByAcNumber.put("231231", ac1);
         accountByAcNumber.put("098765", ac2);
 
     }
+
     @Test
     public void deposiTest(){
 
@@ -113,7 +119,7 @@ public class Unit_Test{
     @Test
     public void editDataTest(){
         EditData.edit_Name(ac1, "Carlos");
-        assertEquals("Carlos", ac1.getAccountOwner().getName());
+        assertEquals("Carlos", ac1.getAccountHolder().getName());
 
         EditData.edit_Password(ac1, "436534");
         assertEquals("436534".hashCode(), ac1.getPasswordHash());
@@ -121,10 +127,10 @@ public class Unit_Test{
         Address testAddss = new Address(" ", " ", " ", " ", " ", " ",
                 " ", " ");
         EditData.edit_Address(ac1, testAddss);
-        assertEquals(testAddss, ac1.getAccountOwner().getAddress1());
+        assertEquals(testAddss, ac1.getAccountHolder().getAddress1());
 
 
-        assertNotEquals("Paulo", ac2.getAccountOwner().getName());
+        assertNotEquals("Paulo", ac2.getAccountHolder().getName());
         assertNotEquals("423423".hashCode(), ac2.getPasswordHash());
 
     }

@@ -195,7 +195,7 @@ dez 8, 14:51
         an attribute of the respective Enums could work. (Forwent)
     //ToDo see the the Note18, 19, 21 (Done 26, Note 22, 23)
 
-dez 9, (16:18)
+dez 9, 16:18
 
     Done26: I added a letter (char) in account number to increase the amount of possible account numbers.
 
@@ -206,3 +206,8 @@ dez 9, (16:18)
 
     Done27 (22:59): I started building an object to Investment Account, but there's a lot more to build. I just implemented
         the basic and it`s like a copy of Account. Then, I will change to the idea listed in Note 17 and 20.
+
+dez 10, 12:42
+
+    Done27: I continue building the investment part of the system, Wallet style, but I still don't know exactly how
+        to do it. I'll wait for the teacher's answer and I think I'll spend some time on the java doc and exception.

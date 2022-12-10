@@ -3,6 +3,11 @@ public class MenuSystemBank {
     private static final double MIN_VALUE = 1.0;
     private static final double MAX_VALUE = 20000.0;
 
+    /**
+     * Although isn't the main method here, It's the head of all the program.
+     * It is responsible for differentiating what the user wants to do within the bank account
+     * @param agency Enum with the number of agency
+     */
     public static void SystemBank(AgencyType agency) {
         while (true) {
             double value = 0;

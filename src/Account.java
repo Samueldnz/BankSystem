@@ -8,14 +8,14 @@ public class Account {
     private static final double ZERO = 0.0;
     private final AgencyType AGENCY;
     private final String AC_NUMBER;
-    private Person accountOwner;
+    private Person accountHolder;
     private double balance;
     private long passwordHash;
     private static double loanCredit;
     private double loanDebit;
 
-    public Account(AgencyType ag, String cc, Person accountOwner, String password, double value){
-        this.accountOwner = accountOwner;
+    public Account(AgencyType ag, String cc, Person holder, String password, double value){
+        this.accountHolder = holder;
         this.AGENCY = ag;
         this.AC_NUMBER = cc;
         this.passwordHash = password.hashCode();
@@ -95,8 +95,8 @@ public class Account {
 
         output.append(String.format("    Agency: %s\n", getAgency()));
         output.append(String.format("    Account Number: %s\n", getAcNumber()));
-        output.append(String.format("    Name: %s\n", accountOwner.getName()));
-        output.append(String.format("    CPF: %s\n", accountOwner.getCPF()));
+        output.append(String.format("    Name: %s\n", accountHolder.getName()));
+        output.append(String.format("    CPF: %s\n", accountHolder.getCPF()));
         output.append(String.format("    Credit of loan: %.4f\n", getLoanCredit()));
         output.append(String.format("    Debit to pay: %.2f\n", getLoanDebit()));
         output.append(String.format("    Balance: %.2f\n", getBalance()));
@@ -149,8 +149,8 @@ public class Account {
         return passwordHash;
     }
 
-    public Person getAccountOwner() {
-        return accountOwner;
+    public Person getAccountHolder() {
+        return accountHolder;
     }
 
     public void setPasswordHash(long passwordHash) {

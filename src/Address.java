@@ -22,6 +22,11 @@ public class Address {
         this.CEP = CEP;
     }
 
+    /**
+     * An override of toString that create a new String that contains
+     * all the attributes of Address
+     * @return a new String
+     */
     @Override
     public String toString()
     {
